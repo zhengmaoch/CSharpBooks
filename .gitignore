@@ -2,6 +2,25 @@
 # 此 .gitignore 文件已由 Microsoft(R) Visual Studio 自动创建。
 ################################################################################
 
-*/bin/Debug
-*/obj/Debug
-/.vs
+*.suo
+*.user
+*.sln.docstates
+
+.vs/
+[Dd]ebug/
+[Rr]elease/
+x64/
+[Bb]in/
+[Oo]bj/
+
+[Aa]pp[Bb]uild/
+[Oo]ut/
+
+.vscode/
+
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+Desktop.ini
+
+$RECYCLE.BIN/
