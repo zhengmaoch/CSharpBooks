@@ -15,11 +15,12 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal">
-            <Button Content="mould A" Margin="5" Command="{Binding OpenCommand}" CommandParameter="A"/>
-            <Button Content="mould B" Margin="5" Command="{Binding OpenCommand}" CommandParameter="B"/>
-            <Button Content="mould C" Margin="5" Command="{Binding OpenCommand}" CommandParameter="C"/>
+            <Button Content="mould A" Margin="5" Command="{Binding OpenCommand}" CommandParameter="ViewA"/>
+            <Button Content="mould B" Margin="5" Command="{Binding OpenCommand}" CommandParameter="ViewB"/>
+            <Button Content="mould C" Margin="5" Command="{Binding OpenCommand}" CommandParameter="ViewC"/>
         </StackPanel>
 
-        <ContentControl Grid.Row="1" Content="{Binding Body}"/>
+        <!--<ContentControl Grid.Row="1" Content="{Binding Body}"/>-->
+        <ContentControl Grid.Row="1" prism:RegionManager.RegionName="ContentRegion"/>
     </Grid>
 </Window>

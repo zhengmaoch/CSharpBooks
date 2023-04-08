@@ -23,7 +23,10 @@ namespace Books.Wpf
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            
+            // 注册模块
+            containerRegistry.RegisterForNavigation<ViewA>();
+            containerRegistry.RegisterForNavigation<ViewB>();
+            containerRegistry.RegisterForNavigation<ViewC>();
         }
     }
 }
