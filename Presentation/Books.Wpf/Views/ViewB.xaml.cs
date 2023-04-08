@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Books.Wpf
+namespace Books.Wpf.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// ViewB.xaml 的交互逻辑
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ViewB : UserControl
     {
-        public MainWindow()
+        public ViewB()
         {
             InitializeComponent();
         }

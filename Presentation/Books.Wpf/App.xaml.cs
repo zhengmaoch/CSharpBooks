@@ -1,4 +1,5 @@
-﻿using Prism.DryIoc;
+﻿using Books.Wpf.Views;
+using Prism.DryIoc;
 using Prism.Ioc;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace Books.Wpf
     {
         protected override Window CreateShell()
         {
-            return Container.Resolve<MainWindow>();
+            return Container.Resolve<MainView>();
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
