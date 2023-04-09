@@ -13,10 +13,12 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal">
-            <Button Content="mould A" Margin="5" Command="{Binding OpenCommand}" CommandParameter="ViewA"/>
-            <Button Content="mould B" Margin="5" Command="{Binding OpenCommand}" CommandParameter="ViewB"/>
+            <Button Content="Mould A" Margin="5" Command="{Binding OpenModuleCommand}" CommandParameter="ViewA"/>
+            <Button Content="Mould B" Margin="5" Command="{Binding OpenModuleCommand}" CommandParameter="ViewB"/>
+            <Button Content="Dialog C" Margin="5" Command="{Binding OpenDialogCommand}" CommandParameter="ViewC"/>
             <Button Content="Back" Margin="5" Command="{Binding BackCommand}"/>
             <Button Content="Forward" Margin="5" Command="{Binding ForwardCommand}"/>
         </StackPanel>

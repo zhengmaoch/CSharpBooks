@@ -2,6 +2,7 @@
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Regions;
+using Prism.Services.Dialogs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,11 @@ namespace Books.Wpf.ViewModels
         private readonly IRegionManager regionManager;
 
         /// <summary>
+        /// 对话框管理器
+        /// </summary>
+        private readonly IDialogService dialogService;
+
+        /// <summary>
         /// 区域导航日志
         /// </summary>
         private IRegionNavigationJournal journal;
@@ -25,20 +31,45 @@ namespace Books.Wpf.ViewModels
         /// <summary>
         /// 打开模块
         /// </summary>
-        public DelegateCommand<string> OpenCommand { get; private set; }
+        public DelegateCommand<string> OpenModuleCommand { get; private set; }
+
+        /// <summary>
+        /// 打开对话框
+        /// </summary>
+        public DelegateCommand<string> OpenDialogCommand { get; private set; }
 
         // 上一步
         public DelegateCommand BackCommand { get; private set; }
 
+        private string information = "information";
+        public string Information { get { return information; } set { information = value; RaisePropertyChanged(); } }
+
         // 下一步
         public DelegateCommand ForwardCommand { get; private set; }
 
-        public MainViewModel(IRegionManager regionManager)
+        public MainViewModel(IRegionManager regionManager, IDialogService dialogService)
         {
-            OpenCommand = new DelegateCommand<string>(Open);
+            OpenModuleCommand = new DelegateCommand<string>(OpenModule);
+            OpenDialogCommand = new DelegateCommand<string>(OpenDialog);
             BackCommand = new DelegateCommand(Back);
             ForwardCommand = new DelegateCommand(Forward);
             this.regionManager = regionManager;
+            this.dialogService = dialogService;
+        }
+
+        private void OpenDialog(string obj)
+        {
+            var keys = new DialogParameters
+            {
+                { "Title", "Test Dialog" }
+            };
+            dialogService.ShowDialog(obj,keys, callback =>
+            {
+                if(callback.Result == ButtonResult.OK)
+                {
+                    Information = callback.Parameters.GetValue<string>("Value");
+                }
+            });
         }
 
         /// <summary>
@@ -69,7 +100,7 @@ namespace Books.Wpf.ViewModels
         /// 打开模块
         /// </summary>
         /// <param name="obj"></param>
-        private void Open(string obj)
+        private void OpenModule(string obj)
         {
             //switch (obj)
             //{

@@ -21,6 +21,8 @@ namespace Books.Plugin.ModuleA
         {
             // 容器中注册ViewA，及与之匹配的ViewAviewModel
             containerRegistry.RegisterForNavigation<ViewA, ViewAViewModels>();
+            // 容器中注册对话框
+            containerRegistry.RegisterDialog<ViewC, ViewCViewModels>();
         }
     }
 }
