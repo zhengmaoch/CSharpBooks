@@ -1,6 +1,4 @@
-﻿using Books.Plugin.ModuleA;
-using Books.Plugin.ModuleB;
-using Books.Wpf.Views;
+﻿using Books.Wpf.Views;
 using Prism.DryIoc;
 using Prism.Ioc;
 using Prism.Modularity;
@@ -29,11 +27,16 @@ namespace Books.Wpf
 
         }
 
-        protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
+        //protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
+        //{
+        //    moduleCatalog.AddModule<ModuleAProfile>();
+        //    moduleCatalog.AddModule<ModuleBProfile>();
+        //    base.ConfigureModuleCatalog(moduleCatalog);
+        //}
+
+        protected override IModuleCatalog CreateModuleCatalog()
         {
-            moduleCatalog.AddModule<ModuleAProfile>();
-            moduleCatalog.AddModule<ModuleBProfile>();
-            base.ConfigureModuleCatalog(moduleCatalog);
+            return new DirectoryModuleCatalog(){ ModulePath = @".\Modules" };
         }
     }
 }
