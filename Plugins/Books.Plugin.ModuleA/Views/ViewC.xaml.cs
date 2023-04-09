@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Books.Plugin.ModuleA.Event;
+using Prism.Events;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +22,31 @@ namespace Books.Plugin.ModuleA.Views
     /// </summary>
     public partial class ViewC : UserControl
     {
-        public ViewC()
+        /// <summary>
+        /// 消息订阅的事件收集器
+        /// </summary>
+        private readonly IEventAggregator aggregator;
+
+        /// <summary>
+        /// 构造函数
+        /// </summary>
+        /// <param name="aggregator">事件收集器</param>
+        public ViewC(IEventAggregator aggregator)
         {
             InitializeComponent();
+ 
+            this.aggregator = aggregator;
+            // 消息订阅
+            this.aggregator.GetEvent<MessageEvent>().Subscribe(SubMessage);
+        }
+
+        private void SubMessage(string obj)
+        {
+            // 接受消息内容
+            MessageBox.Show($"Received Message: {obj}");
+
+            // 取消消息订阅
+            this.aggregator.GetEvent<MessageEvent>().Unsubscribe(SubMessage);
         }
     }
 }

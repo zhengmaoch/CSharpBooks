@@ -15,13 +15,17 @@ namespace Books.Wpf
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>
-    public partial class App : PrismApplication
+    public partial class App : PrismApplication // 通过继承PrismApplication引入Prism框架
     {
         protected override Window CreateShell()
         {
             return Container.Resolve<MainView>();
         }
 
+        /// <summary>
+        /// 容器对象类型注册
+        /// </summary>
+        /// <param name="containerRegistry">注册器</param>
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
 
@@ -34,6 +38,10 @@ namespace Books.Wpf
         //    base.ConfigureModuleCatalog(moduleCatalog);
         //}
 
+        /// <summary>
+        /// 通过文件目录路径完成模块注册
+        /// </summary>
+        /// <returns></returns>
         protected override IModuleCatalog CreateModuleCatalog()
         {
             return new DirectoryModuleCatalog(){ ModulePath = @".\Modules" };

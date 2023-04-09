@@ -11,7 +11,10 @@ using System.Threading.Tasks;
 
 namespace Books.Wpf.ViewModels
 {
-    public class MainViewModel : BindableBase
+    /// <summary>
+    /// 主页面业务逻辑
+    /// </summary>
+    public class MainViewModel : BindableBase // 继承BindableBase实现Prism框架
     {
         /// <summary>
         /// 区域管理器
@@ -29,32 +32,42 @@ namespace Books.Wpf.ViewModels
         private IRegionNavigationJournal journal;
 
         /// <summary>
-        /// 打开模块
+        /// 打开模块Command
         /// </summary>
         public DelegateCommand<string> OpenModuleCommand { get; private set; }
 
         /// <summary>
-        /// 打开对话框
+        /// 打开对话框Command
         /// </summary>
         public DelegateCommand<string> OpenDialogCommand { get; private set; }
 
-        // 上一步
+        // 上一步Command
         public DelegateCommand BackCommand { get; private set; }
 
+        // 界面信息显示
         private string information = "information";
+        // RaisePropertyChanged 更新界面元素
         public string Information { get { return information; } set { information = value; RaisePropertyChanged(); } }
 
-        // 下一步
+        // 下一步Command
         public DelegateCommand ForwardCommand { get; private set; }
 
-        public MainViewModel(IRegionManager regionManager, IDialogService dialogService)
+        /// <summary>
+        /// 构造函数
+        /// </summary>
+        /// <param name="regionManager">注册区域管理器</param>
+        /// <param name="dialogService">注册对话框服务</param>
+        /// /// <param name="journal">注册区域导航日志</param>
+        public MainViewModel(IRegionManager regionManager, IDialogService dialogService, IRegionNavigationJournal journal)
         {
+            // 初始化Command委托
             OpenModuleCommand = new DelegateCommand<string>(OpenModule);
             OpenDialogCommand = new DelegateCommand<string>(OpenDialog);
             BackCommand = new DelegateCommand(Back);
             ForwardCommand = new DelegateCommand(Forward);
             this.regionManager = regionManager;
             this.dialogService = dialogService;
+            this.journal = journal;
         }
 
         private void OpenDialog(string obj)
