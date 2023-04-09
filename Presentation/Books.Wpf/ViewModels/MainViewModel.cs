@@ -18,7 +18,7 @@ namespace Books.Wpf.ViewModels
         private readonly IRegionManager regionManager;
 
         /// <summary>
-        /// 导航日志
+        /// 区域导航日志
         /// </summary>
         private IRegionNavigationJournal journal;
 
