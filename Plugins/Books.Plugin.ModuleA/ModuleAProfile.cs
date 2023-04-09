@@ -1,4 +1,5 @@
-﻿using Books.Plugin.ModuleA.Views;
+﻿using Books.Plugin.ModuleA.ViewModels;
+using Books.Plugin.ModuleA.Views;
 using Prism.Ioc;
 using Prism.Modularity;
 using System;
@@ -18,7 +19,8 @@ namespace Books.Plugin.ModuleA
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            containerRegistry.RegisterForNavigation<ViewA>();
+            // 容器中注册ViewA，及与之匹配的ViewAviewModel
+            containerRegistry.RegisterForNavigation<ViewA, ViewAViewModels>();
         }
     }
 }

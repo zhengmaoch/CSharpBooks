@@ -35,10 +35,16 @@ namespace Books.Wpf.ViewModels
             //    case "B": Body = new ViewB(); break;
             //    case "C": Body = new ViewC(); break;
             //}
+            // 设置导航参数
+            var keys = new NavigationParameters()
+            {
+                { "Title", "Hello!" }
+            };
+
             // 通过IRegionManager接口获取当前全局定义的可用区域
             // 往这个区域动态设置内容
             // 设置内容的方式是通过依赖注入的形式
-            regionManager.Regions["ContentRegion"].RequestNavigate(obj);
+            regionManager.Regions["ContentRegion"].RequestNavigate(obj, keys);
         }
     }
 }
