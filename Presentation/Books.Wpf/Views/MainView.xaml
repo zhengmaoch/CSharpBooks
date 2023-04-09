@@ -17,7 +17,6 @@
         <StackPanel Orientation="Horizontal">
             <Button Content="mould A" Margin="5" Command="{Binding OpenCommand}" CommandParameter="ViewA"/>
             <Button Content="mould B" Margin="5" Command="{Binding OpenCommand}" CommandParameter="ViewB"/>
-            <Button Content="mould C" Margin="5" Command="{Binding OpenCommand}" CommandParameter="ViewC"/>
         </StackPanel>
 
         <!--<ContentControl Grid.Row="1" Content="{Binding Body}"/>-->

@@ -1,6 +1,9 @@
-﻿using Books.Wpf.Views;
+﻿using Books.Plugin.ModuleA;
+using Books.Plugin.ModuleB;
+using Books.Wpf.Views;
 using Prism.DryIoc;
 using Prism.Ioc;
+using Prism.Modularity;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -23,10 +26,14 @@ namespace Books.Wpf
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            // 注册模块
-            containerRegistry.RegisterForNavigation<ViewA>();
-            containerRegistry.RegisterForNavigation<ViewB>();
-            containerRegistry.RegisterForNavigation<ViewC>();
+
+        }
+
+        protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
+        {
+            moduleCatalog.AddModule<ModuleAProfile>();
+            moduleCatalog.AddModule<ModuleBProfile>();
+            base.ConfigureModuleCatalog(moduleCatalog);
         }
     }
 }

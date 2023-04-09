@@ -9,17 +9,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{EA52C7FD-72A3-4054-B41A-DC5DF22AD734}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Books.Core", "Libraries\Books.Core\Books.Core.csproj", "{CDC44986-E04B-4E7E-B468-7BC2D05129FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Books.Core", "Libraries\Books.Core\Books.Core.csproj", "{CDC44986-E04B-4E7E-B468-7BC2D05129FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Books.Data", "Libraries\Books.Data\Books.Data.csproj", "{2EE9702B-1DE9-440B-A7D9-55BD740D13E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Books.Data", "Libraries\Books.Data\Books.Data.csproj", "{2EE9702B-1DE9-440B-A7D9-55BD740D13E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Books.Services", "Libraries\Books.Services\Books.Services.csproj", "{4DE2FB1E-F308-45E2-8EBC-F744EBECD3DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Books.Services", "Libraries\Books.Services\Books.Services.csproj", "{4DE2FB1E-F308-45E2-8EBC-F744EBECD3DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Books.Wpf.Framework", "Presentation\Books.Wpf.Framework\Books.Wpf.Framework.csproj", "{7CD3D502-F23E-4813-A0AF-94C42045DE59}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Books.Wpf.Framework", "Presentation\Books.Wpf.Framework\Books.Wpf.Framework.csproj", "{7CD3D502-F23E-4813-A0AF-94C42045DE59}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Books.Wpf", "Presentation\Books.Wpf\Books.Wpf.csproj", "{C4BE1700-4841-4EAD-A580-5A7ACE5AB1C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Books.Wpf", "Presentation\Books.Wpf\Books.Wpf.csproj", "{C4BE1700-4841-4EAD-A580-5A7ACE5AB1C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Books.Tests", "Tests\Books.Tests\Books.Tests.csproj", "{306A7868-6AA9-4C52-AF31-73E8D69E1733}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Books.Tests", "Tests\Books.Tests\Books.Tests.csproj", "{306A7868-6AA9-4C52-AF31-73E8D69E1733}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{1EF9B770-031C-4EB0-86B5-497458840332}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Books.Plugin.ModuleA", "Plugins\Books.Plugin.ModuleA\Books.Plugin.ModuleA.csproj", "{C7BD9D74-B9E3-4CD9-A204-2BEA389A8FFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Books.Plugin.ModuleB", "Plugins\Books.Plugin.ModuleB\Books.Plugin.ModuleB.csproj", "{0C68E640-A50F-4B6F-9ED9-3E423ADEE1F6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +57,14 @@ Global
 		{306A7868-6AA9-4C52-AF31-73E8D69E1733}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{306A7868-6AA9-4C52-AF31-73E8D69E1733}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{306A7868-6AA9-4C52-AF31-73E8D69E1733}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7BD9D74-B9E3-4CD9-A204-2BEA389A8FFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7BD9D74-B9E3-4CD9-A204-2BEA389A8FFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7BD9D74-B9E3-4CD9-A204-2BEA389A8FFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7BD9D74-B9E3-4CD9-A204-2BEA389A8FFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C68E640-A50F-4B6F-9ED9-3E423ADEE1F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C68E640-A50F-4B6F-9ED9-3E423ADEE1F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C68E640-A50F-4B6F-9ED9-3E423ADEE1F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C68E640-A50F-4B6F-9ED9-3E423ADEE1F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +76,8 @@ Global
 		{7CD3D502-F23E-4813-A0AF-94C42045DE59} = {54BC8582-963E-44F4-B5FA-460B67664939}
 		{C4BE1700-4841-4EAD-A580-5A7ACE5AB1C0} = {54BC8582-963E-44F4-B5FA-460B67664939}
 		{306A7868-6AA9-4C52-AF31-73E8D69E1733} = {EA52C7FD-72A3-4054-B41A-DC5DF22AD734}
+		{C7BD9D74-B9E3-4CD9-A204-2BEA389A8FFC} = {1EF9B770-031C-4EB0-86B5-497458840332}
+		{0C68E640-A50F-4B6F-9ED9-3E423ADEE1F6} = {1EF9B770-031C-4EB0-86B5-497458840332}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BF147D74-64F9-4A61-BF21-D2C367ECEF2B}

@@ -11,4 +11,9 @@
     <PackageReference Include="Prism.DryIoc" Version="8.1.97" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Plugins\Books.Plugin.ModuleA\Books.Plugin.ModuleA.csproj" />
+    <ProjectReference Include="..\..\Plugins\Books.Plugin.ModuleB\Books.Plugin.ModuleB.csproj" />
+  </ItemGroup>
+
 </Project>
