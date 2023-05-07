@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Books.Core.Domain
 {
-    public partial class Book
+    public partial class Book : BaseEntity
     {
 
     }
