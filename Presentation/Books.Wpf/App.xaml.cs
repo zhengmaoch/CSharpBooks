@@ -1,5 +1,7 @@
 ﻿using Books.Wpf.Views;
+using Example;
 using MaterialDesignThemes.Wpf;
+using Microsoft.Extensions.DependencyInjection;
 using Prism.DryIoc;
 using Prism.Ioc;
 using Prism.Modularity;
@@ -18,6 +20,25 @@ namespace Books.Wpf
     /// </summary>
     public partial class App : PrismApplication // 通过继承PrismApplication引入Prism框架
     {
+        public static IServiceProvider ServiceProvider { get; private set; }
+
+        public App()
+        {
+            IServiceCollection serviceCollection = new ServiceCollection();
+            ConfigureServices(serviceCollection);
+            
+        }
+
+        private void ConfigureServices(IServiceCollection services)
+        {
+            IServiceProvider serviceProvider = services.BuildServiceProvider();
+
+            App.ServiceProvider = serviceProvider; //便于全局使用;
+
+            //services.AddSingleton<ITextService>(provider => new TextService("Hi WPF .NET Core 3.0"));
+            services.AddSingleton<MainView>();
+        }
+
         protected override Window CreateShell()
         {
             return Container.Resolve<MainView>();
