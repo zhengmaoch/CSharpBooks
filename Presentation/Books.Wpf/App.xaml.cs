@@ -1,4 +1,5 @@
 ﻿using Books.Wpf.Views;
+using MaterialDesignThemes.Wpf;
 using Prism.DryIoc;
 using Prism.Ioc;
 using Prism.Modularity;
@@ -28,7 +29,7 @@ namespace Books.Wpf
         /// <param name="containerRegistry">注册器</param>
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-
+            //containerRegistry.ConfigurationServices();
         }
 
         //protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
