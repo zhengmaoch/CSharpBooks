@@ -16,7 +16,6 @@ namespace Books.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
             modelBuilder.Entity<Book>(entity => { 
                 entity.HasKey(e => e.Id);
                 entity.Property(e => e.Title).IsRequired();
